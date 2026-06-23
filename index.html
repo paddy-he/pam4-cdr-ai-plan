@@ -149,25 +149,25 @@
 </head>
 <body>
   <header>
-    <h1>PAM4 CDR AI 杈呭姪璁捐鎵ц璁″垝</h1>
-    <p>鐩爣鏄湪涓€涓湀鍐呭畬鎴?CDR 鏋舵瀯閫夊彇涓庣郴缁?model 楠岃瘉锛屽悓鏃剁敤涓€涓畝鍗?DCC block 鎵撻€?ADT / virtuoso-bridge-lite / 浠跨湡鑷姩鍖?/ 鍙傛暟浼樺寲娴佺▼銆?/p>
+    <h1>PAM4 CDR AI 辅助设计执行计划</h1>
+    <p>目标是在一个月内完成 CDR 架构选取与系统 model 验证，同时用一个简单 DCC block 打通 ADT / virtuoso-bridge-lite / 仿真自动化 / 参数优化流程。</p>
   </header>
 
   <main>
     <section>
-      <h2>1. 椤圭洰鐩爣</h2>
+      <h2>1. 项目目标</h2>
       <div class="grid">
         <div class="track">
-          <h3>涓荤嚎 A锛歅AM4 CDR 鏋舵瀯涓庢ā鍨?/h3>
-          <p>涓€涓湀鍐呭畬鎴愪粠鏂囩尞璋冪爺鍒版灦鏋勯€夋嫨锛屽啀鍒?Python/MATLAB 琛屼负绾фā鍨嬮獙璇佺殑闂幆銆?/p>
-          <span class="tag">ISSCC 璋冪爺</span>
-          <span class="tag">鏋舵瀯鐭╅樀</span>
+          <h3>主线 A：PAM4 CDR 架构与模型</h3>
+          <p>一个月内完成从文献调研到架构选择，再到 Python/MATLAB 行为级模型验证的闭环。</p>
+          <span class="tag">ISSCC 调研</span>
+          <span class="tag">架构矩阵</span>
           <span class="tag">Jitter Budget</span>
           <span class="tag">System Model</span>
         </div>
         <div class="track alt">
-          <h3>骞惰绾?B锛欴CC Block AI 璁捐璇曡窇</h3>
-          <p>閫変竴涓父瑙?Duty-Cycle Corrector 缁撴瀯锛岄噸鐐归獙璇?AI 宸ュ叿閾惧浣曞姞閫?tb 鎼缓銆佸弬鏁版悳绱€佷豢鐪熺粨鏋滄彁鍙栧拰璁捐璁板綍銆?/p>
+          <h3>并行线 B：DCC Block AI 设计试跑</h3>
+          <p>选一个常见 Duty-Cycle Corrector 结构，重点验证 AI 工具链如何加速 tb 搭建、参数搜索、仿真结果提取和设计记录。</p>
           <span class="tag">ADT</span>
           <span class="tag">virtuoso-bridge-lite</span>
           <span class="tag">Spectre/Ocean</span>
@@ -175,198 +175,199 @@
         </div>
       </div>
       <div class="callout">
-        <strong>鎵ц鍘熷垯锛?/strong>涓荤嚎 A 鍐冲畾鐪熸鐨?CDR 鏂瑰悜锛涘苟琛岀嚎 B 涓嶈拷姹?DCC 鏈€浼樻€ц兘锛岃拷姹傛妸 AI 杈呭姪妯℃嫙璁捐娴佺▼璺戦€氾紝褰㈡垚鍙鐢ㄦ柟娉曘€?      </div>
+        <strong>执行原则：</strong>主线 A 决定真正的 CDR 方向；并行线 B 不追求 DCC 最优性能，追求把 AI 辅助模拟设计流程跑通，形成可复用方法。
+      </div>
     </section>
 
     <section>
-      <h2>2. 涓€涓湀鏃堕棿琛?/h2>
+      <h2>2. 一个月时间表</h2>
       <div class="timeline">
         <div class="week">
-          <h3>绗?1 鍛?/h3>
-          <p><strong>涓荤嚎 A锛?/strong>寤虹珛鏂囩尞搴擄紝瀹屾垚 ISSCC/JSSC/VLSI 鍏抽敭璇嶆绱㈣〃锛屽垵姝ョ瓫鍑?20-40 绡囩浉鍏宠鏂囥€?/p>
-          <p><strong>骞惰绾?B锛?/strong>纭鏈湴 Cadence銆丳DK銆丼pectre銆丄DT銆乿irtuoso-bridge-lite 鏄惁鍙敤锛屽畾涔?DCC testbench銆?/p>
+          <h3>第 1 周</h3>
+          <p><strong>主线 A：</strong>建立文献库，完成 ISSCC/JSSC/VLSI 关键词检索表，初步筛出 20-40 篇相关论文。</p>
+          <p><strong>并行线 B：</strong>确认本地 Cadence、PDK、Spectre、ADT、virtuoso-bridge-lite 是否可用，定义 DCC testbench。</p>
         </div>
         <div class="week">
-          <h3>绗?2 鍛?/h3>
-          <p><strong>涓荤嚎 A锛?/strong>瀹屾垚 56G/112G/224G 鏋舵瀯瓒嬪娍瀵规瘮锛屾彁鍙栧叧閿寚鏍囧拰鏋舵瀯 trade-off銆?/p>
-          <p><strong>骞惰绾?B锛?/strong>瀹屾垚 DCC schematic 鍒濈増銆乼b 鍒濈増銆佸熀纭€ transient 浠跨湡鍜?duty-cycle 娴嬮噺鑴氭湰銆?/p>
+          <h3>第 2 周</h3>
+          <p><strong>主线 A：</strong>完成 56G/112G/224G 架构趋势对比，提取关键指标和架构 trade-off。</p>
+          <p><strong>并行线 B：</strong>完成 DCC schematic 初版、tb 初版、基础 transient 仿真和 duty-cycle 测量脚本。</p>
         </div>
         <div class="week">
-          <h3>绗?3 鍛?/h3>
-          <p><strong>涓荤嚎 A锛?/strong>寤虹珛 PAM4 閾捐矾琛屼负妯″瀷锛屽寘鎷?channel銆丆TLE/FFE/DFE銆乻ampler銆乯itter 鍜?CDR loop銆?/p>
-          <p><strong>骞惰绾?B锛?/strong>鎺ュ叆鍙傛暟 sweep / 浼樺寲鍣紝杈撳嚭 pass/fail summary 鍜屼笅涓€杞?sizing 寤鸿銆?/p>
+          <h3>第 3 周</h3>
+          <p><strong>主线 A：</strong>建立 PAM4 链路行为模型，包括 channel、CTLE/FFE/DFE、sampler、jitter 和 CDR loop。</p>
+          <p><strong>并行线 B：</strong>接入参数 sweep / 优化器，输出 pass/fail summary 和下一轮 sizing 建议。</p>
         </div>
         <div class="week">
-          <h3>绗?4 鍛?/h3>
-          <p><strong>涓荤嚎 A锛?/strong>瀹屾垚鍊欓€夋灦鏋?model 楠岃瘉锛屽舰鎴愭灦鏋勯€夋嫨鎶ュ憡鍜屼笅涓€闃舵鐢佃矾 block 鍒嗚В銆?/p>
-          <p><strong>骞惰绾?B锛?/strong>鎬荤粨 AI 璁捐娴佺▼锛屾矇娣€ DCC 鑷姩鍖栨ā鏉匡紝杩佺Щ鍒?CDR 瀛愭ā鍧楄璁°€?/p>
+          <h3>第 4 周</h3>
+          <p><strong>主线 A：</strong>完成候选架构 model 验证，形成架构选择报告和下一阶段电路 block 分解。</p>
+          <p><strong>并行线 B：</strong>总结 AI 设计流程，沉淀 DCC 自动化模板，迁移到 CDR 子模块设计。</p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>3. 涓荤嚎 A锛氭灦鏋勯€夊彇涓?Model 楠岃瘉</h2>
+      <h2>3. 主线 A：架构选取与 Model 验证</h2>
       <table>
         <thead>
           <tr>
-            <th>闃舵</th>
-            <th>杈撳叆</th>
-            <th>鍏蜂綋鏂规硶</th>
-            <th>浜や粯鐗?/th>
+            <th>阶段</th>
+            <th>输入</th>
+            <th>具体方法</th>
+            <th>交付物</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>鏂囩尞妫€绱?/td>
-            <td>ISSCC 2016-2026锛孞SSC/VLSI 杈呭姪</td>
-            <td>鍏抽敭璇嶏細<code>PAM4 receiver</code>, <code>CDR</code>, <code>baud-rate</code>, <code>ADC-based receiver</code>, <code>112Gb/s</code>, <code>224Gb/s</code></td>
-            <td>璁烘枃琛ㄦ牸銆丳DF 閾炬帴銆佹憳瑕併€佸叧閿浘鎴浘绱㈠紩</td>
+            <td>文献检索</td>
+            <td>ISSCC 2016-2026，JSSC/VLSI 辅助</td>
+            <td>关键词：<code>PAM4 receiver</code>, <code>CDR</code>, <code>baud-rate</code>, <code>ADC-based receiver</code>, <code>112Gb/s</code>, <code>224Gb/s</code></td>
+            <td>论文表格、PDF 链接、摘要、关键图截图索引</td>
           </tr>
           <tr>
-            <td>鎸囨爣鎻愬彇</td>
-            <td>paper銆乻lides銆佸叕寮€ digest</td>
-            <td>鎶藉彇閫熺巼銆佸伐鑹恒€佺數婧愩€佹灦鏋勩€丒Q銆丆DR loop銆佸姛鑰椼€侀潰绉€乯itter tolerance銆丅ER 鏉′欢</td>
-            <td>瀵规瘮鐭╅樀</td>
+            <td>指标提取</td>
+            <td>paper、slides、公开 digest</td>
+            <td>抽取速率、工艺、电源、架构、EQ、CDR loop、功耗、面积、jitter tolerance、BER 条件</td>
+            <td>对比矩阵</td>
           </tr>
           <tr>
-            <td>鏋舵瀯 shortlist</td>
-            <td>瀵规瘮鐭╅樀</td>
-            <td>姣旇緝 baud-rate CDR銆乷versampling CDR銆丄DC/DSP CDR銆丳I-based digital CDR銆乭ybrid CDR</td>
-            <td>2-3 涓€欓€夋灦鏋?/td>
+            <td>架构 shortlist</td>
+            <td>对比矩阵</td>
+            <td>比较 baud-rate CDR、oversampling CDR、ADC/DSP CDR、PI-based digital CDR、hybrid CDR</td>
+            <td>2-3 个候选架构</td>
           </tr>
           <tr>
-            <td>琛屼负妯″瀷</td>
-            <td>鐩爣閫熺巼涓庨€氶亾鍋囪</td>
-            <td>Python/MATLAB 寤虹珛 PAM4 TX銆乧hannel銆丒Q銆乻licer銆丳D銆乴oop filter銆丳I/VCO 鎶借薄妯″瀷</td>
-            <td>BER/eye/jitter tolerance/loop stability 鍥?/td>
+            <td>行为模型</td>
+            <td>目标速率与通道假设</td>
+            <td>Python/MATLAB 建立 PAM4 TX、channel、EQ、slicer、PD、loop filter、PI/VCO 抽象模型</td>
+            <td>BER/eye/jitter tolerance/loop stability 图</td>
           </tr>
           <tr>
-            <td>鏋舵瀯瀹氱</td>
-            <td>妯″瀷 sweep 缁撴灉</td>
-            <td>鎸夌収鎬ц兘銆佸姛鑰椼€佸疄鐜板鏉傚害銆侀闄┿€佸彲鎵╁睍鍒?112G/224G 鐨勮兘鍔涙墦鍒?/td>
-            <td>鏋舵瀯閫夋嫨鎶ュ憡 v1</td>
+            <td>架构定稿</td>
+            <td>模型 sweep 结果</td>
+            <td>按照性能、功耗、实现复杂度、风险、可扩展到 112G/224G 的能力打分</td>
+            <td>架构选择报告 v1</td>
           </tr>
         </tbody>
       </table>
     </section>
 
     <section>
-      <h2>4. 骞惰绾?B锛欴CC Block AI 璁捐璇曡窇</h2>
-      <p>鎺ㄨ崘鍏堢敤甯歌 closed-loop / digitally assisted DCC锛屼笉杩芥眰鍘熷垱缁撴瀯銆傜洰鏍囨槸鎶婂伐鍏烽摼銆乸rompt銆佽剼鏈拰浠跨湡闂幆璺戦『銆?/p>
+      <h2>4. 并行线 B：DCC Block AI 设计试跑</h2>
+      <p>推荐先用常见 closed-loop / digitally assisted DCC，不追求原创结构。目标是把工具链、prompt、脚本和仿真闭环跑顺。</p>
       <table>
         <thead>
           <tr>
-            <th>姝ラ</th>
-            <th>鍔ㄤ綔</th>
-            <th>AI/鑷姩鍖栧弬涓庢柟寮?/th>
-            <th>杈撳嚭</th>
+            <th>步骤</th>
+            <th>动作</th>
+            <th>AI/自动化参与方式</th>
+            <th>输出</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Block 瀹氫箟</td>
-            <td>纭畾杈撳叆棰戠巼銆佺數婧愩€佽礋杞姐€佺數瀹广€乨uty-cycle 杈撳叆鑼冨洿銆佺洰鏍囨牎姝ｇ簿搴?/td>
-            <td>AI 杈呭姪鐢熸垚 spec sheet 鍜?test plan</td>
+            <td>Block 定义</td>
+            <td>确定输入频率、电源、负载、电容、duty-cycle 输入范围、目标校正精度</td>
+            <td>AI 辅助生成 spec sheet 和 test plan</td>
             <td>DCC spec v0</td>
           </tr>
           <tr>
-            <td>鏋舵瀯鍒濋€?/td>
-            <td>閫夋嫨 delay-line based / edge-combiner / feedback-controlled DCC</td>
-            <td>AI 鐢熸垚浼樼己鐐瑰姣斿拰 schematic checklist</td>
-            <td>鏋舵瀯璇存槑</td>
+            <td>架构初选</td>
+            <td>选择 delay-line based / edge-combiner / feedback-controlled DCC</td>
+            <td>AI 生成优缺点对比和 schematic checklist</td>
+            <td>架构说明</td>
           </tr>
           <tr>
             <td>Testbench</td>
-            <td>鎼缓 transient tb锛岃緭鍏?duty-cycle sweep锛屾祴閲忚緭鍑?duty error銆乨elay銆乸ower</td>
-            <td>ADT 鎴?bridge 鐢熸垚 tb銆丱cean/SKILL/Python measurement 鑴氭湰</td>
-            <td>鍙噸澶嶄豢鐪熺殑 tb</td>
+            <td>搭建 transient tb，输入 duty-cycle sweep，测量输出 duty error、delay、power</td>
+            <td>ADT 或 bridge 生成 tb、Ocean/SKILL/Python measurement 脚本</td>
+            <td>可重复仿真的 tb</td>
           </tr>
           <tr>
-            <td>鍙傛暟浼樺寲</td>
-            <td>sweep delay cell size銆乧urrent銆乴oad銆乧ontrol code銆乴oop gain</td>
-            <td>Python optimizer 璇讳豢鐪熺粨鏋滐紝鎺ㄨ崘涓嬩竴缁勫弬鏁?/td>
-            <td>鍙傛暟琛ㄥ拰 Pareto 鍥?/td>
+            <td>参数优化</td>
+            <td>sweep delay cell size、current、load、control code、loop gain</td>
+            <td>Python optimizer 读仿真结果，推荐下一组参数</td>
+            <td>参数表和 Pareto 图</td>
           </tr>
           <tr>
-            <td>娴佺▼娌夋穩</td>
-            <td>鎶?prompt銆佽剼鏈€佺粨鏋滆〃銆佸け璐ユ渚嬫暣鐞嗘垚妯℃澘</td>
-            <td>AI 鑷姩鐢熸垚璁捐鏃ュ織鍜屼笅涓€姝ュ缓璁?/td>
-            <td>鍙縼绉诲埌 CDR block 鐨勫伐浣滄祦</td>
+            <td>流程沉淀</td>
+            <td>把 prompt、脚本、结果表、失败案例整理成模板</td>
+            <td>AI 自动生成设计日志和下一步建议</td>
+            <td>可迁移到 CDR block 的工作流</td>
           </tr>
         </tbody>
       </table>
     </section>
 
     <section>
-      <h2>5. 鏈湴椤圭洰缁撴瀯</h2>
+      <h2>5. 本地项目结构</h2>
       <table>
         <thead>
           <tr>
-            <th>鐩綍</th>
-            <th>鐢ㄩ€?/th>
+            <th>目录</th>
+            <th>用途</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td><code>00_project_plan</code></td><td>璁″垝銆侀噷绋嬬銆佷細璁褰曘€乼odo</td></tr>
-          <tr><td><code>01_literature</code></td><td>璁烘枃琛ㄣ€丳DF銆佹埅鍥俱€侀槄璇荤瑪璁?/td></tr>
-          <tr><td><code>02_architecture</code></td><td>鏋舵瀯瀵规瘮鐭╅樀銆乯itter budget銆佸喅绛栬褰?/td></tr>
-          <tr><td><code>03_system_model</code></td><td>Python/MATLAB 琛屼负妯″瀷銆佷豢鐪熷浘銆佹暟鎹?/td></tr>
-          <tr><td><code>04_dcc_ai_flow</code></td><td>DCC block銆乼b銆佷紭鍖栬剼鏈€丄I 宸ュ叿璇曡窇璁板綍</td></tr>
-          <tr><td><code>05_circuit_blocks</code></td><td>鍚庣画 CDR 瀛愭ā鍧楄璁¤褰?/td></tr>
-          <tr><td><code>06_sim_automation</code></td><td>Ocean/SKILL/Python 浠跨湡鑷姩鍖栬剼鏈?/td></tr>
-          <tr><td><code>07_reports</code></td><td>鍛ㄦ姤銆佹灦鏋勯€夋嫨鎶ュ憡銆佹渶缁堟€荤粨</td></tr>
+          <tr><td><code>00_project_plan</code></td><td>计划、里程碑、会议记录、todo</td></tr>
+          <tr><td><code>01_literature</code></td><td>论文表、PDF、截图、阅读笔记</td></tr>
+          <tr><td><code>02_architecture</code></td><td>架构对比矩阵、jitter budget、决策记录</td></tr>
+          <tr><td><code>03_system_model</code></td><td>Python/MATLAB 行为模型、仿真图、数据</td></tr>
+          <tr><td><code>04_dcc_ai_flow</code></td><td>DCC block、tb、优化脚本、AI 工具试跑记录</td></tr>
+          <tr><td><code>05_circuit_blocks</code></td><td>后续 CDR 子模块设计记录</td></tr>
+          <tr><td><code>06_sim_automation</code></td><td>Ocean/SKILL/Python 仿真自动化脚本</td></tr>
+          <tr><td><code>07_reports</code></td><td>周报、架构选择报告、最终总结</td></tr>
         </tbody>
       </table>
     </section>
 
     <section>
-      <h2>6. 浠婃棩寮€濮嬫墽琛?/h2>
+      <h2>6. 今日开始执行</h2>
       <table>
         <thead>
           <tr>
-            <th>鐘舵€?/th>
-            <th>浠诲姟</th>
-            <th>璇存槑</th>
+            <th>状态</th>
+            <th>任务</th>
+            <th>说明</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><span class="status done">DONE</span></td>
-            <td>鍒涘缓鏈湴鐩綍缁撴瀯</td>
-            <td>鍦?<code>D:\PAM4 CDR</code> 涓嬪缓绔?8 涓伐浣滅洰褰曘€?/td>
+            <td>创建本地目录结构</td>
+            <td>在 <code>D:\PAM4 CDR</code> 下建立 8 个工作目录。</td>
           </tr>
           <tr>
             <td><span class="status done">DONE</span></td>
-            <td>寤虹珛 literature matrix 妯℃澘</td>
-            <td>瀛楁瑕嗙洊骞翠唤銆佷細璁€侀€熺巼銆佸伐鑹恒€佹灦鏋勩€丆DR 绫诲瀷銆丒Q銆佹€ц兘銆侀闄╁拰鍙€熼壌鐐广€?/td>
+            <td>建立 literature matrix 模板</td>
+            <td>字段覆盖年份、会议、速率、工艺、架构、CDR 类型、EQ、性能、风险和可借鉴点。</td>
           </tr>
           <tr>
             <td><span class="status done">DONE</span></td>
-            <td>寤虹珛 architecture decision matrix 妯℃澘</td>
-            <td>鐢ㄤ簬瀵?baud-rate銆丄DC/DSP銆乷versampling銆丳I-based 绛夋柟妗堟墦鍒嗐€?/td>
+            <td>建立 architecture decision matrix 模板</td>
+            <td>用于对 baud-rate、ADC/DSP、oversampling、PI-based 等方案打分。</td>
           </tr>
           <tr>
             <td><span class="status todo">TODO</span></td>
-            <td>姊崇悊鏈湴 AI/EDA 宸ュ叿</td>
-            <td>纭 ADT銆乿irtuoso-bridge-lite銆丆adence銆丼pectre銆丳ython 鐜鍜岃鍙瘉鐘舵€併€?/td>
+            <td>梳理本地 AI/EDA 工具</td>
+            <td>确认 ADT、virtuoso-bridge-lite、Cadence、Spectre、Python 环境和许可证状态。</td>
           </tr>
           <tr>
             <td><span class="status done">DONE</span></td>
             <td>DCC spec v0</td>
-            <td>鍏堝亣璁捐緭鍏?1-4 GHz锛?5-55% duty 杈撳叆鑼冨洿锛岀洰鏍囪緭鍑鸿宸皬浜?1-2%锛屽悗缁寜 PDK 鍜屽簲鐢ㄤ慨姝ｃ€?/td>
+            <td>先假设输入 1-4 GHz，45-55% duty 输入范围，目标输出误差小于 1-2%，后续按 PDK 和应用修正。</td>
           </tr>
         </tbody>
       </table>
-      <p class="small">澶囨敞锛氳嫢娌℃湁鍙洿鎺ヨ闂殑 IEEE/ISSCC 鍏ㄦ枃鏉冮檺锛屽厛鐢ㄥ叕寮€ digest銆佽鏂囨爣棰樸€佹憳瑕併€乻lides 鍜屽紩鐢ㄤ俊鎭缓绔嬬储寮曪紝鍐嶉€愭琛?PDF銆?/p>
+      <p class="small">备注：若没有可直接访问的 IEEE/ISSCC 全文权限，先用公开 digest、论文标题、摘要、slides 和引用信息建立索引，再逐步补 PDF。</p>
     </section>
 
     <section>
-      <h2>7. 褰撳墠椋庨櫓涓庡緟纭</h2>
+      <h2>7. 当前风险与待确认</h2>
       <ul>
-        <li><span class="warn">PDK / Virtuoso / Spectre 鏄惁鍙敤</span>锛氬喅瀹氬苟琛岀嚎 B 鑳藉惁鐩存帴鎺ュ叆鐪熷疄鏅朵綋绠′豢鐪熴€?/li>
-        <li><span class="warn">鐩爣閫熺巼灏氭湭瀹氭</span>锛氫富绾?A 鏆傛椂鎸?56G/112G/224G 涓夋。姣旇緝锛屼絾绗?2 鍛ㄦ湯闇€瑕佹敹鏁涗紭鍏堢骇銆?/li>
-        <li><span class="warn">ADT / virtuoso-bridge-lite 鑳藉姏杈圭晫鏈煡</span>锛氬厛鐢?DCC block 楠岃瘉宸ュ叿杩炴帴銆乶etlist 鐢熸垚銆乼b 鎿嶆帶銆佺粨鏋滆В鏋愩€?/li>
-        <li><span class="warn">224G 椋庨櫓杈冮珮</span>锛氳嫢鏈€缁堢洰鏍囨槸 224G锛屾灦鏋勫拰妯″瀷闃舵蹇呴』鏇撮噸瑙?ADC/DSP銆乼ime-interleaving銆乧lock distribution 鍜?calibration銆?/li>
+        <li><span class="warn">PDK / Virtuoso / Spectre 是否可用</span>：决定并行线 B 能否直接接入真实晶体管仿真。</li>
+        <li><span class="warn">目标速率尚未定死</span>：主线 A 暂时按 56G/112G/224G 三档比较，但第 2 周末需要收敛优先级。</li>
+        <li><span class="warn">ADT / virtuoso-bridge-lite 能力边界未知</span>：先用 DCC block 验证工具连接、netlist 生成、tb 操控、结果解析。</li>
+        <li><span class="warn">224G 风险较高</span>：若最终目标是 224G，架构和模型阶段必须更重视 ADC/DSP、time-interleaving、clock distribution 和 calibration。</li>
       </ul>
     </section>
   </main>
